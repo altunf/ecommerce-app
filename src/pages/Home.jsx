@@ -10,9 +10,9 @@ function Home() {
   const { products, setProducts } = useContext(ProductContext);
 
   useEffect(() => {
-    axios.get("https://fakestoreapi.com/products?limit=12").then((res) => {
-      setProducts(res.data);
-    });
+    axios
+      .get("https://fakestoreapi.com/products?limit=12")
+      .then((res) => setProducts(res.data));
   }, []);
 
   return (

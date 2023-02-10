@@ -3,26 +3,26 @@ import Card from "../components/Card";
 import axios from "axios";
 
 function AllProducts() {
-  const [all, setAll] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
-    axios.get("https://fakestoreapi.com/products").then((res) => {
-      setAll(res.data);
-    });
+    axios
+      .get("https://fakestoreapi.com/products")
+      .then((res) => setAllProducts(res.data));
   }, []);
 
   return (
     <div className="container mt-5 mb-5 p-3">
       <div className="row">
-        {all.map((item) => {
+        {allProducts.map((product) => {
           return (
             <Card
-              key={item.id}
-              props={item}
-              title={item.title}
-              category={item.category}
-              price={item.price}
-              image={item.image}
+              key={product.id}
+              props={product}
+              title={product.title}
+              category={product.category}
+              price={product.price}
+              image={product.image}
             />
           );
         })}

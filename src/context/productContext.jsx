@@ -11,7 +11,7 @@ export function ProductProvider({ children }) {
 
   const addBasket = (product) => {
     const notifyİnfo = () =>
-      toast.info(`${productBasket.length + 1}. Ürün Sepete Eklendi`, {
+      toast.info("Ürün Sepete Eklendi", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -21,6 +21,7 @@ export function ProductProvider({ children }) {
         progress: undefined,
         theme: "colored",
       });
+
     const notifyWarn = () =>
       toast.warn("Bu ürün sepete eklenmiş !", {
         position: "top-center",
@@ -32,9 +33,9 @@ export function ProductProvider({ children }) {
         progress: undefined,
         theme: "colored",
       });
-    let flag = productBasket.find((item) => {
-      return item.id === product.id;
-    });
+
+    let flag = productBasket.find((item) => item.id === product.id);
+
     if (!flag) {
       product.count = 1;
       notifyİnfo();
@@ -43,6 +44,7 @@ export function ProductProvider({ children }) {
       ? notifyWarn()
       : setProductBasket((prevState) => [...prevState, product]);
   };
+
   const removeBasket = (product) => {
     setProductBasket((prevState) => {
       return prevState.filter((_) => _.id !== product.id);
@@ -73,6 +75,7 @@ export function ProductProvider({ children }) {
 
     addTotal();
   };
+
   const decrementCount = (prodsParameter) => {
     let prod = productBasket.map((x) => {
       if (x.id === prodsParameter.id) {

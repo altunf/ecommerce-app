@@ -128,7 +128,7 @@ export default function ShopCart() {
                       value={select}
                       onChange={handleSelect}
                     >
-                      <option value="0">Select-Delivey</option>
+                      <option value="0">Select-Delivery</option>
                       <option value={5}>Standard-Delivery- €5.00</option>
                       <option value={10}>Fast-Delivery- €10.00</option>
                     </select>

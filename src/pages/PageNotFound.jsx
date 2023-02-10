@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function PageNotFound() {
   return (
@@ -7,9 +7,9 @@ function PageNotFound() {
       <h2>404 Page not found...</h2>
       <div className="pt-5">
         <div tag="h6" className="container mb-0">
-          <Link to={"/"} className="text-body">
+          <NavLink to="/" className="text-body">
             <i className="bi bi-arrow-left-circle-fill"> Back</i>
-          </Link>
+          </NavLink>
         </div>
       </div>
     </div>

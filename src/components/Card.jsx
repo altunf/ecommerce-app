@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { ProductContext } from "../context/productContext";
 
 function Card({ props, title, category, description, price, image }) {
@@ -21,14 +21,14 @@ function Card({ props, title, category, description, price, image }) {
             Add to Cart
           </button>
         </div>
-        <Link to={`/details/${props.id}`}>
+        <NavLink to={`/details/${props.id}`}>
           <img
             className="card-img-right flex-auto d-none d-lg-block"
             alt="Thumbnail [200x250]"
             src={image}
             style={{ width: "250px", height: "250px" }}
           />
-        </Link>
+        </NavLink>
       </div>
     </div>
   );

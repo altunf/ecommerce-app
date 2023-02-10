@@ -8,9 +8,9 @@ function DetailPage() {
   const [prodDetail, setProdDetail] = useState([]);
 
   useEffect(() => {
-    axios.get(`https://fakestoreapi.com/products/${id}`).then((res) => {
-      setProdDetail(res.data);
-    });
+    axios
+      .get(`https://fakestoreapi.com/products/${id}`)
+      .then((res) => setProdDetail(res.data));
   }, []);
 
   return (
